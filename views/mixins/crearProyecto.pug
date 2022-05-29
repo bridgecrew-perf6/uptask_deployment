@@ -1,0 +1,10 @@
+mixin crearProyecto(proyecto = {})
+    //- Agregando formulario con sus respectivas clases
+    form.agregar-proyecto(action=`/nuevo-proyecto/${proyecto.id || ''}` method="POST")
+        //- div con clase campo
+        .campo
+            label(for="nombre") Nombre Proyecto:
+            input(value=proyecto.nombre type="text" id="nombre" name="nombre" placeholder="Nombre Proyecto")
+        //- div con clase campo y enviar
+        .campo.enviar
+            input(type="submit" value=`${proyecto.nombre ? 'Guardar': 'Agregar'}` class="boton")

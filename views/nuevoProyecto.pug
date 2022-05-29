@@ -1,0 +1,18 @@
+extends layout 
+include mixins/crearProyecto
+
+block  contenido 
+    //- div con clase contenido-principal
+    .contenido-principal 
+        h1 #{nombrePagina}
+
+        //- Insertando el mensaje de error del controlador
+        if errores
+            each error in errores
+                .alerta= error.texto
+            
+        +crearProyecto(proyecto)
+
+
+            ul#proyectos.proyectos
+              
